@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <table id="cart-table">
+        <thead>
+            <tr>
+                <th>Book</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+            <!-- Cart items will be displayed here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Function to parse query parameters from URL
+        function getQueryParameters() {
+            var params = {};
+            var queryString = window.location.search.substring(1);
+            var pairs = queryString.split("&");
+            for (var i = 0; i < pairs.length; i++) {
+                var pair = pairs[i].split("=");
+                var key = decodeURIComponent(pair[0]);
+                var value = decodeURIComponent(pair[1] || '');
+                if (!params[key]) {
+                    params[key] = [];
+                }
+                params[key].push(value);
+            }
+            return params;
+        }
+
+        // Function to display added items in the cart table
+        function displayCartItems() {
+            var cartTable = document.getElementById("cart-items");
+            var queryParams = getQueryParameters();
+            for (var key in queryParams) {
+                var values = queryParams[key];
+                values.forEach(function(value) {
+                    var row = cartTable.insertRow();
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    cell1.textContent = key;
+                    cell2.textContent = value;
+                });
+            }
+        }
+
+        // Call function to display cart items when the page loads
+        displayCartItems();
+    </script>
+</body>
+</html>
