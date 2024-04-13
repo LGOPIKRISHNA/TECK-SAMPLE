@@ -1,40 +1,77 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="book1.css">
-        <style>
-            .big1{
-                display: flex;
-                flex-direction: row;
-            }
-            .big2{
-                display: flex;
-                flex-direction: column;
-              margin-left: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="tr"><h1><font color="orange"><a href="index.html">Home</a>&NonBreakingSpace; &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;<a href="contact3.html">Contact_us</a>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</font></h1></div>
-     <div class="big1">   <div class="big2">
-            <div class="inside1"><img src="book1-inside1.jpg"  onmouseover="fun(this)" onmouseout="bun(this)"></img></div>
-          <div>  <a href="book12-inside12.html"><button style="font-size:40px;">Buy</button> </a> </div></div>
-         <div class="big2">
-            <div> <img src="book1-inside2.jpg"  onmouseover="fun(this)" onmouseout="bun(this)"></img></div>
-          <div> <a href="book1-inside2.html"> <button style="font-size:40px;">Buy</button></a></div>
-        </div></div>
-        <script>
-            function fun(x)
-            {
-                x.style.width=450;
-                x.style.height=550;
-            }
-            function bun(x)
-            {
-                x.style.width=350;
-                x.style.height=576;
-            }
-        </script>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <link rel="stylesheet" href="book1.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .book {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .book img {
+            width: 350px;
+            height: auto;
+            transition: all 0.3s ease;
+        }
+        .book img:hover {
+            width: 450px;
+        }
+        .button {
+            margin-top: 10px;
+            font-size: 24px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: orange;
+            color: white;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: darkorange;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to our Book Store</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <span>&nbsp;|&nbsp;</span>
+            <a href="contact3.html">Contact Us</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="book">
+            <img src="book1-inside1.jpg" alt="Book 1">
+            <a href="book12-inside12.html"><button class="button">Buy</button></a>
+        </div>
+        <div class="book">
+            <img src="book1-inside2.jpg" alt="Book 2">
+            <a href="book1-inside2.html"><button class="button">Buy</button></a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for image hover effect
+        const images = document.querySelectorAll('.book img');
+
+        images.forEach(image => {
+            image.addEventListener('mouseover', function() {
+                this.style.width = '450px';
+            });
+
+            image.addEventListener('mouseout', function() {
+                this.style.width = '350px';
+            });
+        });
+    </script>
+</body>
 </html>
