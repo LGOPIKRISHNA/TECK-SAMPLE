@@ -1,76 +1,106 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            .main{
-                display: flex;
-                flex-direction: row;
-                
-                padding-left: 10px;
-            }
-            .inside1{
-                box-sizing: border-box;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <style>
+        body {
+            background-color: cyan;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
-            }
-            .tr{
-    text-align:center;
-    position:flex;
-    background-color:white;   
-            }
-            
-            .sub{
-                display: flex;
-                flex-direction: column;
-                margin-left: 30px;
-            }
-        </style>
-    </head>
-    <body bgcolor="cyan">
+        .header {
+            text-align: center;
+            background-color: white;
+            padding: 10px;
+        }
 
-        <div class="tr"><h1><font color="orange"><a href="index.html">Home</a>&NonBreakingSpace; &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;<a href="contact3.html">Contact_us</a>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</font></h1></div>
+        .header a {
+            margin: 0 10px;
+            color: orange;
+            text-decoration: none;
+            font-size: 20px;
+        }
 
-        <div class="main">
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+        }
 
-            <div class="sub"><div class="inside1">
-            <img src="book5-inside1.jpg" onmouseover="fun(this)" onmouseout="bun(this)"></img>
-            <div><a href="book5-inside1.html"><button style="font-size:40px;">Buy</button></a></div>
-            </div></div>&nbsp;
+        .sub {
+            margin: 10px;
+            text-align: center;
+        }
 
-        <div class="sub"><div class="inside1">
-                <img src="book5-inside2.jpg" onmouseover="fun(this)" onmouseout="bun(this)"></img>
-                <div><a href="book5-inside2.html"><button style="font-size:40px;">Buy</button></a></div>
-                </div></div>&nbsp;
+        .sub img {
+            width: 350px;
+            height: auto;
+            transition: all 0.3s ease;
+        }
 
-        <div class="sub"><div class="inside1">
-                    <img src="book5-inside1.jpg" onmouseover="fun(this)" onmouseout="bun(this)"></img>
-                    <div><a href="book5-inside1.html"><button style="font-size:40px;">Buy</button></a></div>
-                    </div></div>&nbsp;
-        
-        <div class="sub"><div class="inside1">
-                        <img src="book5-inside2.jpg" onmouseover="fun(this)" onmouseout="bun(this)"></img>
-                        <div><a href="book5-inside2.html"><button style="font-size:40px;">Buy</button></a></div>
-                        </div></div>&nbsp;
+        .sub img:hover {
+            width: 450px;
+            height: 550px;
+        }
 
-             
-            
+        .button {
+            margin-top: 10px;
+            font-size: 24px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: orange;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+        }
 
+        .button:hover {
+            background-color: darkorange;
+        }
+    </style>
+</head>
+<body>
 
-            
+    <div class="header">
+        <h1><a href="index.html">Home</a> | <a href="contact3.html">Contact Us</a></h1>
+    </div>
+
+    <div class="main">
+        <div class="sub">
+            <div class="inside1">
+                <img src="book5-inside1.jpg" alt="Book 1" onmouseover="fun(this)" onmouseout="bun(this)">
+                <div><a href="book5-inside1.html" class="button">Buy</a></div>
+            </div>
         </div>
 
+        <div class="sub">
+            <div class="inside1">
+                <img src="book5-inside2.jpg" alt="Book 2" onmouseover="fun(this)" onmouseout="bun(this)">
+                <div><a href="book5-inside2.html" class="button">Buy</a></div>
+            </div>
+        </div>
 
-        <script>
-            function fun(x)
-            {
-                x.style.width=450;
-                x.style.height=550;
-            }
-            function bun(x)
-            {
-                x.style.width=350;
-                x.style.height=525;
-            }
-        </script>
-    </body>
+        <!-- Add more book elements as needed -->
+
+    </div>
+
+    <script>
+        function fun(x) {
+            x.style.width = "450px";
+            x.style.height = "550px";
+        }
+
+        function bun(x) {
+            x.style.width = "350px";
+            x.style.height = "525px";
+        }
+    </script>
+
+</body>
 </html>
