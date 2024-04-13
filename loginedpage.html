@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Store</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('opition1.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+        }
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-container input[type=search] {
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+        }
+        .search-container input[type=submit] {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: bisque;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            padding: 10px 20px;
+            font-size: 20px;
+            text-decoration: none;
+            color: blue;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: rgb(246, 255, 196);
+            border-radius: 15%;
+        }
+        .picture {
+            display: flex;
+            justify-content:left;
+        }
+        .fuc {
+            margin: 20px;
+            cursor: pointer;
+        }
+        .fuc img {
+            width: 300px;
+            height: 300px;
+            transition: width 0.3s, height 0.3s;
+        }
+        .fuc img:hover {
+            width: 450px;
+            height: 550px;
+        }
+    </style>
+</head>
+<body>
+    <h1><img src="phot1.png" alt="Online Book Store"></h1>
+    <div class="search-container">
+        <input type="search" id="o" required placeholder="Search here">
+        <input type="submit" onclick="search()" value="Search">
+    </div>
+    <nav>
+        <a href="log.html">Home</a>
+        <a href="contact2.html">Contact Us</a>
+        <a href="about.html">About Us</a>
+        <a href="feedback2.html">Feedback</a>
+        <a href="#"><img src="shopping-cart.png" width="45px" height="40px" alt="Shopping Cart" title="Added Cart"></a>
+        <a href="maps.html" title="Our books delivered locations"><img src="google-maps.png" width="45px" height="40px" alt="Google Maps"></a>
+        <a href="profile.html" title="Profile"><img src="user.png" width="45px" height="40px" alt="Profile"></a>
+    </nav>
+    <div class="picture">    
+        <div class="fuc"><a href="book12.html"><img src="book1.png" alt="Book 1"></a><br><font size="4">1. Mohjitvijayji Maharaja Books (MMB)</font></div>
+        <div class="fuc"><a href="book22.html"><img src="book2.png" alt="Book 2"></a><br><font size="4">2. Yugbhushansuri (YMB)</font></div>
+        <div class="fuc"><a href="book32.html"><img src="p3.png" alt="Book 3"></a><br><font size="4">3. Pravin Bhai Moto (PBM)</font></div>
+        <div class="fuc"><a href="book42.html"><img src="p4.png" alt="Book 4"></a><br><font size="4">4. Others</font></div>
+        <div class="fuc"><a href="book52.html"><img src="p5.png" alt="Book 5"></a><br><font size="4">5. Gangotri-Granthmala (GGB)</font></div>
+    </div>
+    <script>
+        function search() {
+            var input = document.getElementById("o").value.toLowerCase();
+            switch (input) {
+                case "mmb":
+                case "1":
+                    window.open('book12.html');
+                    break;
+                case "ymb":
+                case "2":
+                    window.open('book22.html');
+                    break;
+                case "pbm":
+                case "3":
+                    window.open('book32.html');
+                    break;
+                case "others":
+                case "4":
+                    window.open('book42.html');
+                    break;
+                case "ggb":
+                case "5":
+                    window.open('book52.html');
+                    break;
+                case "":
+                    alert("Please fill the search field");
+                    break;
+                default:
+                    alert("Book not found");
+            }
+        }
+    </script>
+</body>
+</html>

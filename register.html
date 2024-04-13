@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .c{
+           margin-left: 450px;
+            margin-right: 450px;
+            }
+            .l{
+                padding:10px;
+                font-style:italic;
+                font-size: 30px;
+                background-color: whitesmoke;
+
+            }
+            input[type="submit"]{
+                font-style: italic;
+                padding:30px 20px;
+                color:azure;
+                font-size:14px;
+                border-radius:10px;
+                background-color:lavender;
+            }
+            .a{
+                padding:10px;
+                border-radius: 30px;
+                border-color: aquamarine;
+                background-color:khaki;
+            }
+            .a:hover
+            {
+                background-color: aquamarine;
+            }
+           
+   body{
+                background-image: url('opition4.webp');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body><form onsubmit="fun()">
+        <center><u><h1>Register</h1></u></center>
+        <div class="c">
+            <div class="l" id="k1">
+                Enter name:<input type="text" class="a" placeholder="Enter name" size="25px" required pattern="^[A-Za-z0-9]+"><br></div>
+                <div class="l" id="k2">
+                Enter email:<input type="email"  class="a" placeholder="Enter Email" size="24px" required  pattern="[a-z0-9._%±]+@ [a-z0-9.-]+. [a-z] {2,}$"><br></div>
+                <div class="l" id="k3">
+                Enter password:<input type="password"  class="a"  id="ed1" placeholder="Enter password" name="password" size="25px" required ><br></div>
+                <div class="l" id="k4">
+                Confirm password:<input type="password"  class="a" id="ed2" placeholder="confirm password" name="confirm password" size="20px" required><br></div>
+                <div class="l" id="k5">
+                Enter Distict:<input type="Dist"   class="a" placeholder="Enter Distict" name="state" size="29px" required  pattern="^[A-Za-z]+"><br></div>
+                <div class="l" id="k6">
+                Enter State:<input type="state"  class="a" placeholder="Enter state" name="state"  size="31px" required  pattern="^[A-Za-z]+"><br></div>
+                <div class="l" id="k7">
+                Select class:
+                <select>
+                    <option>----select----</option>
+                    <option>10th</option>
+                    <option>11th</option>
+                    <option>12th</option>
+                    <option>Graduation</option>
+                </select><br></div>
+
+              <div class="l" id="k8"  ><input type="submit" value="submit" class="a"></div>
+        </div>
+    </form>
+    <script>
+        function fun()
+        {
+            var q=document.getElementById('ed1').value;
+            var w=document.getElementById('ed2').value;
+            if(q==w)
+            {
+                alert("successfully Registerd");
+                window.open('login.html');
+            }
+            else
+            {
+                alert("please write password and confirm password same");
+            }
+        }
+    </script>
+    </body>
+</html>
